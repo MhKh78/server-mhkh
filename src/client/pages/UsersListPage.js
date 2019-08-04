@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchUsers } from '../actions';
 
 class UsersListPage extends Component {
+  // Needed TODO: make sure why!!!
   componentDidMount() {
     this.props.fetchUsers();
   }
