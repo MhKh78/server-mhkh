@@ -44,6 +44,11 @@ app.get('*', (req, res) => {
     const context = {};
     const content = renderer(req, store, context);
 
+    // TODO: WTF is the damn issue in no JS mode
+    if (context.url) {
+      return res.redirect(301, context.url);
+    }
+
     if (context.notFound) {
       res.status(404);
     }
